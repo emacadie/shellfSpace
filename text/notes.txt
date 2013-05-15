@@ -1,0 +1,172 @@
+MySQL Notes:
+
+Utilities:
+mysql-query-browser
+mysql-admin
+
+ To use SET PASSWORD on Unix, do this:
+
+shell> mysql -u root
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('dellsux');
+mysql> SET PASSWORD FOR 'root'@'saigon' = PASSWORD('dellsux');
+mysql> FLUSH PRIVILEGES;
+
+create database shellf;
+GRANT ALL PRIVILEGES ON shellf.* TO 'shellf'@'localhost' IDENTIFIED BY 'bTe3-45rC' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON shellf.* TO 'shellf'@'%' IDENTIFIED BY 'bTe3-45rC' WITH GRANT OPTION;
+	
+shellf"; // "ekm";
+        this.password = "bTe3-45rC
+		
+mysql -h host -u user -p < batch-file
+mysql -u shellf -pbTe3-45rC < /home/ericm/txtFiles/shellf/makeShellfTables.txt
+
+mysql -u shellf -pbTe3-45rC --database=shellf
+
+select site_entry.site_name, site_entry.site_url, 
+site_entry.type_of_transaction, site_entry.type_of_site, site_entry.url_string, 
+user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, 
+site_entry.javascript_needed, site_entry.flash_needed, 
+site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered
+from site_entry, user_entry_archive where 
+( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number );
+
+
+
+
+/home/ericm/tmp/stuff/home/ericm/Java/ShellfSpace/Projects001/shellfSpace001/txtFiles may have some good files.
+
+Must find the project in which I got the properties from a file in the WEB-INF directory. That way I will not have to worry about there the properties file is, or whether or not I need to set the classpath.
+
+Hosting: Look at rimuhosting.com and http://www.kattare.com/services_pricing.kvws
+
+A few ideas on where to put the properties file:
+/home/ericm/jolene/ftp.20060212/home/freecity/zHdb1/Java/Projects001/ssNB40-01/build/web/WEB-INF/classes/conf/siteType.prop
+erties
+/home/ericm/jolene/ftp.20060212/home/freecity/zHdb1/Java/Projects001/ssNB40-01/web/WEB-INF/classes/conf/siteType.properties
+/home/ericm/jolene/ftp.20060212/home/tmp/cdrom/home/ericm/Java/ShellfSpace/Projects001/ssNB40-01/build/web/WEB-INF/classes/
+conf/siteType.properties
+/home/ericm/jolene/ftp.20060212/home/tmp/cdrom/home/ericm/Java/ShellfSpace/Projects001/ssNB40-01/web/WEB-INF/classes/conf/s
+iteType.properties
+/home/ericm/tmp/stuff/home/ericm/Java/ShellfSpace/Projects001/ssNB40-01/build/web/WEB-INF/classes/conf/siteType.properties
+/home/ericm/tmp/stuff/home/ericm/Java/ShellfSpace/Projects001/ssNB40-01/web/WEB-INF/classes/conf/siteType.properties
+ericm@saigon:~$                   
+
+And where is it in the code?
+
+The Struts Eclipse project is at /home/ericm/tmp/stuff/eclipse/StrutsShellf001/WebRoot/jsp
+
+http://localhost:8084/Shellf2006001/
+http://saigon:8084/Shellf2006001/
+
+
+AddSiteForm.java - done
+admin/
+LoginForm.java - done
+LogOut.java - done
+MemberMainPage.java - done
+ProcessAddSite.java - done
+ProcessLogin.java - done
+ProcessRegistration.java - done
+ProcessSuggestionBox.java - done
+ProcessUpdateProfile.java - done
+ProcessURLSearch - done
+RegistrationForm.java - done
+SuggestionBoxForm.java - done
+UpdateProfileForm.java - done
+URLSearchForm - done
+
+20060619:
+Now the files are at:
+/home/ericm/txtFiles/shellf/cd001/Java/Projects001/ssNB40-01/src/net/shellfspace/members
+1
+
+us/ratfish2
+shellfspace/ratfish3
+shellfspacesuggestion/ratfish4
+
+--------------------------------------------------------------------------------
+
+For uploading: 
+Destination on server: htdocs
+Source on workstation: /zEKM/nb50.001/Shellf2006001/build/web
+Minus META-INF directory and the jars for JavaMail
+Also: Change the mail server name in net.shellfspace.struts.action.SuggestNewTypeAction
+
+20060801:
+Info on the user bean:
+[ericm@saigon][jsp]$ grep -in user * | grep -i bean
+processAddSite.jsp:27:    Hello <!-- bean:write name="userName" scope="request" />.<br />
+processRegistration.jsp:25:    Hello <bean:write name="userName" scope="request" />.<br />
+userLoginSuccess.jsp:23:        id="userSessionBean"
+userLoginSuccess.jsp:25:        class="net.shellfspace.struts.UserSessionBean" />
+userLoginSuccess.jsp:29:    <!-- bean:write name="userName" scope="request" />, you successfully logged in! -->
+userLoginSuccess.jsp:31:    <p>Welcome, <bean:write name="userSessionBean" property="sessionUserName" /></p>
+userLoginSuccess.jsp:33:    <p>Email address: <bean:write name="userSessionBean" property="sessionUserEmail" /></p>
+userLoginSuccess.jsp:35:    <p>Browser: <bean:write name="userSessionBean" property="sessionBrowser" /></p>
+userLoginSuccess.jsp:37:    <p>OS: <bean:write name="userSessionBean" property="sessionOS" /></p>
+[2006-08-02 00:35:47]
+
+
+===============================================
+userSessionBean.getSessionUserName() at the beginning of processRequest: billgates
+userSessionBean.getSessionUserNumber() at the beginning of processRequest: 2
+userSessionBean.getSessionUserProfileNum() at the beginning of processRequest: 2
+userSessionBean.getSessionUserEmail() at the beginning of processRequest: billgates@localhost
+userSessionBean.getSessionBrowserNum() at the beginning of processRequest: 66.0
+userSessionBean.getSessionBrowser() at the beginning of processRequest: Camino
+userSessionBean.getSessionOS() at the beginning of processRequest: NetBSD 
+userSessionBean.getSessionOSNum() at the beginning of processRequest: 55.0
+===============================================
+DEBUG: Here is the statement:
+update user_entry_current set profile_number = 3 where  ( user_id_name = 'billgates' ) and ( user_counter = 2 )
+DEBUG: Here is the statement:
+insert into user_entry_archive (user_counter, user_profile_number, operating_system,  browser, kernel_version, browser_version) values ('2', '2', 'Slackware Linux ', 'Lynx', '10.4', '1')
+SQLEXception occurred: 
+Duplicate entry '2-2' for key 1
+java.sql.SQLException: Duplicate entry '2-2' for key 1
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1600)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1695)
+        at com.mysql.jdbc.Connection.execSQL(Connection.java:2998)
+        at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1071)
+        at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1005)
+        at net.shellfspace.struts.action.UpdateProfileAction.processRequest(UpdateProfileAction.java:186)
+        at net.shellfspace.struts.action.UpdateProfileAction.execute(UpdateProfileAction.java:297)
+        at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:419)
+        at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:224)
+        at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1194)
+        at org.apache.struts.action.ActionServlet.doPost(ActionServlet.java:432)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:709)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+        at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:362)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:202)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+        at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:856)
+        at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:744)
+        at org.apache.tomcat.util.net.PoolTcpEndpoint.processSocket(PoolTcpEndpoint.java:527)
+        at org.apache.tomcat.util.net.LeaderFollowerWorkerThread.runIt(LeaderFollowerWorkerThread.java:80)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+        at java.lang.Thread.run(Thread.java:595)
+===============================================
+userSessionBean.getSessionUserName() at the end of processRequest: billgates
+userSessionBean.getSessionUserNumber() at the end of processRequest: 2
+userSessionBean.getSessionUserProfileNum() at the end of processRequest: 2
+userSessionBean.getSessionUserEmail() at the end of processRequest: billgates@localhost
+userSessionBean.getSessionBrowserNum() at the end of processRequest: 66.0
+userSessionBean.getSessionBrowser() at the end of processRequest: Camino
+userSessionBean.getSessionOS() at the end of processRequest: NetBSD 
+userSessionBean.getSessionOSNum() at the end of processRequest: 55.0
+

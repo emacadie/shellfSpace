@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="copyright" content="&copy; ShellfSpace dot Net 2002-2003" />
+<title>Shellf Space URL Search Form</title>
+<style type="text/css" media="all">@import "/html/layout1.css";</style>
+<link rel="shortcut icon" href="/images/shellfSpace.ico" />
+</head>
+<body>
+
+<div id="Logo">
+<img src="/images/shellfSpaceNewsPrint002.png" 
+     alt="Shellf Space" 
+     height="50" 
+     width="356" /> 
+</div>
+
+<div id="Header">
+<a href="http://www.shellfspace.net/" title="Shellf Space">Shellf Space.net</a>-- Advocating UNIX-based systems for desktop use in e-commerce
+</div>
+
+<div id="Menu">
+<a href="/html/mainPage.html">Welcome Page</a><br />
+<a href="/servlet/net.shellfspace.members.RegistrationForm">Register</a><br />
+<a href="/servlet/net.shellfspace.members.LoginForm">Login</a> <br />
+<a href="/servlet/net.shellfspace.members.MemberMainPage">Member Main Page</a><br />
+<a href="/servlet/net.shellfspace.members.UpdateProfileForm">Update profile</a> <br />
+<a href="/servlet/net.shellfspace.members.AddSiteForm">Add a site</a><br />
+<a href="/servlet/net.shellfspace.members.LogOut">Log out</a> <br />
+<a href="/html/searchMain.html">Search Page</a><br />
+<a href="/html/faq.html">FAQ</a><br /> 
+<a href="/html/links.html">Links</a><br />
+<a href="mailto:us@shellfspace.net">Contact us</a><br />
+</div>
+
+<div id="Content">
+<form method="post" action="/servlet/net.shellfspace.common.ProcessURLSearch" >
+<table>
+<tbody>
+
+<tr><td>URL</td>
+<td><input type="text" size="20" value=" " name="URL" /></td>
+</tr>
+
+<tr>
+<td>Operating System</td>
+<td>
+<select name="OperatingSystem">
+<option value=""></option>
+<option value="FreeBSD">FreeBSD</option>
+<option value="Mac OS X">Mac OS X</option>
+<option value="NetBSD">NetBSD</option>
+<option value="OpenBSD">OpenBSD</option>
+<option value="Debian GNU/Linux">Debian GNU/Linux</option>
+<option value="Gentoo Linux">Gentoo Linux</option>
+<option value="Linux From Scratch">Linux From Scratch</option>
+<option value="Libranet GNU/Linux">Libranet GNU/Linux</option>
+<option value="LindowsOS">LindowsOS</option>
+<option value="Lycoris Desktop/LX">Lycoris Desktop/LX</option>
+<option value="Mandrake Linux">Mandrake Linux</option>
+<option value="Red Hat Linux">Red Hat Linux</option>
+<option value="Slackware Linux">Slackware Linux</option>
+<option value="Sorcerer Linux">Sorcerer Linux</option>
+<option value="SuSE Linux">SuSE Linux</option>
+<option value="Xandros Linux">Xandros Linux</option>
+<option value="Yellow Dog Linux">Yellow Dog Linux</option>
+<option value="SCO">SCO</option>
+<option value="Darwin">Darwin</option>
+<option value="BSDOS">BSD/OS</option>
+<option value="HP-UX">HP-UX</option>
+<option value="IRIX">IRIX</option>
+<option value="Solaris">Solaris</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Browser</td>
+<td>
+<select name="Browser">
+<option value=""></option>
+<option value="Mozilla">Mozilla</option>
+<option value="Galeon">Galeon</option>
+<option value="Konqueror">Konqueror</option>
+<option value="Opera">Opera</option>
+<option value="Nautilus">Nautilus</option>
+<option value="Netscape">Netscape</option>
+<option value="skipstone">Skipstone</option>
+<option value="BrowseX">BrowseX</option>
+<option value="Phoenix">Phoenix</option>
+<option value="Lynx">Lynx</option>
+<option value="Mac OS X IE">IE on Mac OS X (shame on you!!!)</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Search for transactions that were</td>
+<td>
+<select name="successValue">
+<option value=" "> </option>
+<option value="yes">Successful</option>
+<option value="no">Unsuccessful</option>
+<option value="all">Search for all</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Make the world safe for Unix now!</td>
+<td><input type="submit" name="register" value="Find those sites" /></td>
+</tr>
+</tbody>
+</table>
+</form>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</div> <!-- end div Content -->
+<hr />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Copyright &copy; ShellfSpace dot Net 2002-2003</p>
+</body>
+</html>

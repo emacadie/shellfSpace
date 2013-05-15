@@ -1,0 +1,218 @@
+-------------------------------------------
+Debug: Here is the statement:
+select a.browser,  a.operating_system, c.user_counter,  a.browser_version, 
+a.kernel_version, c.profile_number, c.email_address 
+from user_entry_current c, user_entry_archive a 
+where (c.user_id_name='billgates') and (c.password='billgates') 
+and (c.user_counter = a.user_counter) and (c.profile_number = a.user_profile_number)
+-------------------------------------------
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, 
+site_entry.javascript_needed, site_entry.flash_needed, site_entry.javavm_needed, 
+site_entry.success, site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number ) 
+and ( site_entry.success="yes" ) order by site_entry.site_name
+-------------------------------------------
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, site_entry.javascript_needed, 
+site_entry.flash_needed, site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number ) 
+and ( site_entry.success!="yes" ) 
+order by site_entry.site_name
+-------------------------------------------
+
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, site_entry.javascript_needed, 
+site_entry.flash_needed, site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number ) 
+and ( site_entry.success="yes" ) order by site_entry.site_name
+
+-------------------------------------------
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, site_entry.javascript_needed, 
+site_entry.flash_needed, site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number ) 
+and ( site_entry.success!="yes" ) order by site_entry.site_name
+
+-------------------------------------------
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, site_entry.javascript_needed, 
+site_entry.flash_needed, site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number ) 
+order by site_entry.site_name
+-------------------------------------------
+
+debug: Here is the StringBuffer theQueryBuff:
+select site_entry.site_name, site_entry.site_url, site_entry.type_of_transaction, 
+site_entry.type_of_site, site_entry.url_string, user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, 
+site_entry.javascript_needed, site_entry.flash_needed, site_entry.javavm_needed, 
+site_entry.success, site_entry.date_entered 
+from site_entry, user_entry_archive 
+where ( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number )
+ and ( user_entry_archive.operating_system like '%Mac OS X%' ) order by site_entry.site_name
+-------------------------------------------
+ Here is the query:
+insert into site_entry( site_name, site_url, user_counter, user_profile_number, 
+cookies_needed, javascript_needed, flash_needed, javavm_needed, type_of_transaction, 
+type_of_site, url_string, success, date_entered) 
+values ('Windows Live', 'www.windowslive.com', '2', '1', 'y', 'y', 'y', 'y', 
+'Product search', 'Software', 'asp', 'Yes', '2006-8-2')
+-----------------------------------------
+select * from user_entry_archive where user_counter = 7;
+select * from user_entry_current;
+--------------------------------------
+select * from user_entry_archive;
+--------------------------------------
+select user_id_name from user_entry_current where user_id_name like 'billjoy'
+---------------------------------------
+Here is the statement:
+insert into user_entry_current (user_counter, profile_number, user_id_name, password, 
+email_address, date_joined) 
+values ('3', '1', 'billjoy', 'billjoy', 'billjoy@localhost', '2006-8-6')
+---------------------------------------
+Here is the statement:
+insert into user_entry_archive (user_counter, user_profile_number, operating_system,  
+browser, kernel_version, browser_version) 
+values ('3', '1', 'Solaris', 'Mozilla', '2.8', '6.0')
+---------------------------------------
+update user_entry_current set profile_number=1 where user_counter=2;
+update user_entry_current set profile_number=2 where user_counter=2;
+delete from user_entry_archive where user_counter=5;
+delete from user_entry_current where user_counter=5;
+------------------------------------------------------------------
+DEBUG: Here is the statement:
+insert into user_entry_archive (user_counter, user_profile_number, operating_system,  
+browser, kernel_version, browser_version) values 
+('null', '1', 'NetBSD ', 'Galeon', '2.0', '2.0')
+SQLEXception occurred: 
+Data truncation: Out of range value adjusted for column 'user_counter' at row 1
+com.
+-------------------------------------
+DEBUG: Here is the statement:
+update user_entry_current set profile_number = 2 where  ( user_id_name = 'billgates' ) 
+and ( user_counter = 2 )
+DEBUG: Here is the statement:
+insert into user_entry_archive (user_counter, user_profile_number, operating_system,  
+browser, kernel_version, browser_version) values ('2', '1', 'NetBSD ', 'BrowseX', '33', '2.0')
+SQLEXception occurred: 
+Duplicate entry '2-1' for key 1
+java.sql.SQLException: Duplicate entry '2-1' for key 1
+So the user_entry_archive.user_profile_number field is not being updated.
+--------------------------------------
+update user_entry_current set profile_number = 2 where  ( user_id_name = 'billgates' ) 
+and ( user_counter = 2 )
+DEBUG: Here is the statement:
+insert into user_entry_archive (user_counter, user_profile_number, operating_system, 
+ browser, kernel_version, browser_version) 
+values ('2', '2', 'NetBSD ', 'Camino', '55', '66')
+Just called UpdateProfileAction.processReque
+
++++++++++++++++++++++++++
+About to call UpdateProfileAction.processRequest
+===============================================
+userSessionBean.getSessionUserName() at the beginning of processRequest: stevejobs
+userSessionBean.getSessionUserNumber() at the beginning of processRequest: 1
+userSessionBean.getSessionUserProfileNum() at the beginning of processRequest: 1
+userSessionBean.getSessionUserEmail() at the beginning of processRequest: stevejobs@MacAdie.net
+userSessionBean.getSessionBrowserNum() at the beginning of processRequest: 10.0
+userSessionBean.getSessionBrowser() at the beginning of processRequest: Safari
+userSessionBean.getSessionOS() at the beginning of processRequest: Mac OS X
+userSessionBean.getSessionOSNum() at the beginning of processRequest: 10.1
+===============================================
+DEBUG: Here is the statement:
+update user_entry_current set profile_number = 2 where  ( user_id_name = 'stevejobs' ) 
+and ( user_counter = 1 )
+DEBUG: Here is the statement:
+insert into user_entry_archive 
+(user_counter, user_profile_number, operating_system,  browser, kernel_version, 
+browser_version) values ('1', '2', 'Mac OS X ', 'Opera', '10.2', '4.654')
+===============================================
+userSessionBean.getSessionUserName() at the beginning of processRequest: stevejobs
+userSessionBean.getSessionUserNumber() at the beginning of processRequest: 1
+userSessionBean.getSessionUserProfileNum() at the beginning of processRequest: 1
+userSessionBean.getSessionUserEmail() at the beginning of processRequest: stevejobs@MacAdie.net
+userSessionBean.getSessionBrowserNum() at the beginning of processRequest: 10.0
+userSessionBean.getSessionBrowser() at the beginning of processRequest: Safari
+userSessionBean.getSessionOS() at the beginning of processRequest: Mac OS X
+userSessionBean.getSessionOSNum() at the beginning of processRequest: 10.1
+===============================================
+Just called UpdateProfileAction.processRequest
++++++++++++++++++++++++++++++++++++++++++++++++++
+select c.user_id_name, a.user_counter, a.user_profile_number as "Prof Num", 
+a.operating_system as OS, a.kernel_version as "OS Ver", 
+a.browser, a.browser_version as "Brow Ver"
+from user_entry_current c, user_entry_archive a where c.user_counter = a.user_counter;
+----------------------------------------------------------------
+
+select c.user_id_name, a.user_counter, a.user_profile_number as "Prof Num",  
+a.operating_system as OS, a.kernel_version as "OS Ver",  a.browser, 
+a.browser_version as "Brow Ver" 
+from user_entry_current c, user_entry_archive a 
+where c.user_counter = a.user_counter 
+order by a.user_counter, a.user_profile_number;
+
+select c.user_id_name, c.password, a.user_counter, 
+a.user_profile_number as "Prof Num",  a.operating_system as OS, 
+a.kernel_version as "OS Ver",  a.browser, a.browser_version as "Brow Ver" 
+from user_entry_current c, user_entry_archive a 
+where c.user_counter = a.user_counter 
+order by a.user_counter, a.user_profile_number;
+
+select c.user_id_name, c.password, a.user_counter as "Count", 
+a.user_profile_number as "Prof Num",  a.operating_system as OS, 
+a.kernel_version as "OS Ver",  a.browser, a.browser_version as "Brow Ver",
+c.email_address
+from user_entry_current c, user_entry_archive a 
+where c.user_counter = a.user_counter 
+order by a.user_counter, a.user_profile_number;
+
+----------------------------------------------------------------
+
+debug: Here is the query:
+insert into site_entry( site_name, site_url, user_counter, user_profile_number, cookies_needed, javascript_needed, flash_needed, javavm_needed, type_of_transaction, type_of_site, url_string, success, date_entered) values ('www.java.net', 'www.java.net', '3', '1', 'y', 'y', 'y', 'y', 'Product search', 'Software', 'jsp', 'Yes', '2006-8-16')
+SQLEXception occurred: 
+Data truncation: Data too long for column 'success' at row 1
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: 
+Data too long for column 'success' at row 1
+      
+ 
+<p>Here is the statement:
+ insert into site_entry( site_name, site_url, user_counter, user_profile_number,
+ cookies_needed, javascript_needed, flash_needed, javavm_needed, 
+type_of_transaction, type_of_site, url_string, success, date_entered) 
+values 
+('Debian Planet', 'www.debianplanet.org', '7', '1', 'y', 'y', 'y', 'y', 
+'Account lookup', 'Forum', 'php', 'No: browser error', '2006-8-16')
+

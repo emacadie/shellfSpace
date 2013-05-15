@@ -1,0 +1,14 @@
+
+                out.println( "<p>Here are the parameters: </p>" );
+                out.println( "<ul>" );
+                out.println( "<li>Site Name: " + argSiteName + "</li>" );
+                out.println( "<li>Site URL: " + argURL + "</li>" );
+                out.println( "<li>URL String: " + argURLString + "</li>" );
+                out.println( "<li>Type of Transaction: " + argTypeOfTrans + "</li>" );
+                out.println( "<li>Need for cookies: " + argNeedCookies + "</li>" );
+                out.println( "<li>Need for javascript: " + argNeedJavaScript + "</li>" );
+                out.println( "<li>Need for Flash: " + argNeedFlash + "</li>" );
+                out.println( "<li>Need for Java: the world cannot get enough Java</li>" );
+                out.println( "</ul>" );
+                out.println( "<p>&nbsp;</p><p>You are logged in as " + 
+                    ( String )theSession.getAttribute( "sessionUserName" ) 

@@ -1,0 +1,123 @@
+Using CATALINA_BASE:   /home/ericm/.netbeans/5.0/jakarta-tomcat-5.5.9_base
+Using CATALINA_HOME:   /usr/local/netbeans50/enterprise2/jakarta-tomcat-5.5.9
+Using CATALINA_TMPDIR: /home/ericm/.netbeans/5.0/jakarta-tomcat-5.5.9_base/temp
+Using JRE_HOME:       /usr/local/jdk1.5.0_07
+Aug 15, 2006 11:18:54 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8084
+Aug 15, 2006 11:18:54 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1602 ms
+Aug 15, 2006 11:18:54 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Aug 15, 2006 11:18:54 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/5.5.9
+Aug 15, 2006 11:18:55 PM org.apache.catalina.core.StandardHost start
+INFO: XML validation disabled
+Aug 15, 2006 11:18:59 PM org.apache.struts.tiles.TilesPlugin initDefinitionsFactory
+INFO: Tiles definition factory loaded for module ''.
+Aug 15, 2006 11:18:59 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validator-rules.xml'
+Aug 15, 2006 11:18:59 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validation.xml'
+Aug 15, 2006 11:19:00 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8084
+Aug 15, 2006 11:19:00 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Aug 15, 2006 11:19:00 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/36  config=null
+Aug 15, 2006 11:19:00 PM org.apache.catalina.storeconfig.StoreLoader load
+INFO: Find registry server-registry.xml at classpath resource
+Aug 15, 2006 11:19:01 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 6383 ms
+Aug 15, 2006 11:19:01 PM org.apache.catalina.startup.HostConfig checkResources
+INFO: Undeploying context [/Shellf2006001]
+Aug 15, 2006 11:19:02 PM org.apache.struts.tiles.TilesPlugin initDefinitionsFactory
+INFO: Tiles definition factory loaded for module ''.
+Aug 15, 2006 11:19:02 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validator-rules.xml'
+Aug 15, 2006 11:19:02 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validation.xml'
+Aug 15, 2006 11:21:07 PM org.apache.struts.tiles.TilesRequestProcessor initDefinitionsMapping
+INFO: Tiles definition factory found for request processor ''.
+In no-arg constructor for ConnectionPool
+Starting net.shellfspace.struts.action.UserLoginAction.execute()
+Debug: Here is the statement:
+select a.browser,  a.operating_system, c.user_counter,  a.browser_version, a.kernel_version, c.profile_number, c.email_address from user_entry_current c, user_entry_archive a where (c.user_id_name='billgates') and (c.password='billgates') and (c.user_counter = a.user_counter) and (c.profile_number = a.user_profile_number)
+Here is ulForm.getUserName(): billgates
+Here is ulForm.getPassword(): billgates
+Here is forwardString: success
+Endinging net.shellfspace.struts.action.UserLoginAction.execute()
+2006-8-15-11:21:54: Constructing BeanTester
+In BeanTester.startProp
+Size of properties is: 99
+Here is myProp.getProperty( "osNameTotal" )  27
+In no-arg constructor for ConnectionPool
+About to call UpdateProfileAction.processRequest
+===============================================
+userSessionBean.getSessionUserName() at the beginning of processRequest: billgates
+userSessionBean.getSessionUserNumber() at the beginning of processRequest: 2
+userSessionBean.getSessionUserProfileNum() at the beginning of processRequest: 2
+userSessionBean.getSessionUserEmail() at the beginning of processRequest: billgates@localhost
+userSessionBean.getSessionBrowserNum() at the beginning of processRequest: 66.0
+userSessionBean.getSessionBrowser() at the beginning of processRequest: Camino
+userSessionBean.getSessionOS() at the beginning of processRequest: NetBSD 
+userSessionBean.getSessionOSNum() at the beginning of processRequest: 55.0
+===============================================
+DEBUG: Here is the statement:
+update user_entry_current set profile_number = 3 
+where  ( user_id_name = 'billgates' ) and ( user_counter = 2 )
+DEBUG: Here is the statement:
+insert into user_entry_archive 
+(user_counter, user_profile_number, operating_system,  
+browser, kernel_version, browser_version) 
+values ('2', '2', 'Slackware Linux ', 'Lynx', '10.4', '1')
+SQLEXception occurred: 
+Duplicate entry '2-2' for key 1
+java.sql.SQLException: Duplicate entry '2-2' for key 1
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1600)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1695)
+        at com.mysql.jdbc.Connection.execSQL(Connection.java:2998)
+        at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1071)
+        at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1005)
+        at net.shellfspace.struts.action.UpdateProfileAction.processRequest(UpdateProfileAction.java:186)
+        at net.shellfspace.struts.action.UpdateProfileAction.execute(UpdateProfileAction.java:297)
+        at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:419)
+        at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:224)
+        at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1194)
+        at org.apache.struts.action.ActionServlet.doPost(ActionServlet.java:432)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:709)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+        at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:362)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:202)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+        at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:856)
+        at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:744)
+        at org.apache.tomcat.util.net.PoolTcpEndpoint.processSocket(PoolTcpEndpoint.java:527)
+        at org.apache.tomcat.util.net.LeaderFollowerWorkerThread.runIt(LeaderFollowerWorkerThread.java:80)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+        at java.lang.Thread.run(Thread.java:595)
+===============================================
+userSessionBean.getSessionUserName() at the end of processRequest: billgates
+userSessionBean.getSessionUserNumber() at the end of processRequest: 2
+userSessionBean.getSessionUserProfileNum() at the end of processRequest: 2
+userSessionBean.getSessionUserEmail() at the end of processRequest: billgates@localhost
+userSessionBean.getSessionBrowserNum() at the end of processRequest: 66.0
+userSessionBean.getSessionBrowser() at the end of processRequest: Camino
+userSessionBean.getSessionOS() at the end of processRequest: NetBSD 
+userSessionBean.getSessionOSNum() at the end of processRequest: 55.0
+===============================================
+Just called UpdateProfileAction.processRequest
+Aug 15, 2006 11:24:48 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8084
+Aug 15, 2006 11:24:49 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Aug 15, 2006 11:24:49 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8084

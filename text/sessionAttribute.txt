@@ -1,0 +1,25 @@
+( String ) theSession.getAttribute( "sessionUserName" ) + 
+ theSession.setAttribute( "sessionUserName", " " );
+
+( Integer ) theSession.getAttribute( "sessionUserNumber" ) + 
+theSession.setAttribute( "sessionUserNumber", theInt );
+
+( Integer ) theSession.getAttribute( "sessionUserProfileNum" ) + 
+theSession.setAttribute( "sessionUserProfileNum", profNum );
+
+theSession.setAttribute( "sessionUserEmail", newEmail01Param );
+theSession.getAttribute( "sessionUserEmail" ) 
+
+theSession.setAttribute( "sessionBrowserNum", browserFloat02 );
+theSession.getAttribute( "sessionBrowserNum" ) + "</p>\n" +
+
+theSession.setAttribute( "sessionBrowser", browserName );
+String browser         = ( String ) theSession.getAttribute( "sessionBrowser" );
+
+theSession.setAttribute( "sessionOS", OS );
+String OS  = ( String ) theSession.getAttribute( "sessionOS" );
+
+theSession.setAttribute( "sessionOSNum", theFloat );
+" " + theSession.getAttribute( "sessionOSNum" ) + "</p>\n" +
+
+

@@ -1,0 +1,41 @@
+MySQL Notes:
+
+Utilities:
+mysql-query-browser
+mysql-admin
+
+ To use SET PASSWORD on Unix, do this:
+
+shell> mysql -u root
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('dellsux');
+mysql> SET PASSWORD FOR 'root'@'saigon' = PASSWORD('dellsux');
+mysql> FLUSH PRIVILEGES;
+
+create database shellf;
+GRANT ALL PRIVILEGES ON shellf.* TO 'shellf'@'localhost' IDENTIFIED BY 'bTe3-45rC' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON shellf.* TO 'shellf'@'%' IDENTIFIED BY 'bTe3-45rC' WITH GRANT OPTION;
+	
+shellf"; // "ekm";
+        this.password = "bTe3-45rC
+		
+mysql -h host -u user -p < batch-file
+mysql -u shellf -pbTe3-45rC < /home/ericm/txtFiles/shellf/makeShellfTables.txt
+
+mysql -u shellf -pbTe3-45rC
+
+mysql -u shellf -pbTe3-45rC --database=shellf
+
+select site_entry.site_name, site_entry.site_url, 
+site_entry.type_of_transaction, site_entry.type_of_site, site_entry.url_string, 
+user_entry_archive.operating_system, 
+user_entry_archive.kernel_version, user_entry_archive.browser, 
+user_entry_archive.browser_version, site_entry.cookies_needed, 
+site_entry.javascript_needed, site_entry.flash_needed, 
+site_entry.javavm_needed, site_entry.success, 
+site_entry.date_entered
+from site_entry, user_entry_archive where 
+( site_entry.user_counter=user_entry_archive.user_counter ) 
+and ( site_entry.user_profile_number=user_entry_archive.user_profile_number );
+
+
+

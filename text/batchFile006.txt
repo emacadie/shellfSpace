@@ -1,0 +1,50 @@
+create database shellf;
+
+use shellf;
+
+create table site_entry (
+site_increment INT UNSIGNED NOT NULL AUTO_INCREMENT,
+site_name VARCHAR( 25 ),
+site_url VARCHAR( 30 ),
+user_counter INT UNSIGNED NOT NULL,
+user_profile_number TINYINT UNSIGNED NOT NULL,
+cookies_needed ENUM( 'y', 'n' ) NOT NULL,
+javascript_needed ENUM( 'y', 'n' ) NOT NULL,
+flash_needed ENUM( 'y', 'n' ) NOT NULL,
+javavm_needed ENUM( 'y', 'n' ) NOT NULL,
+type_of_transaction VARCHAR( 20 ),
+type_of_site VARCHAR( 20 ),
+success VARCHAR( 15 ) NOT NULL,
+text_comment VARCHAR( 50 ),
+url_string VARCHAR( 10 ),
+date_entered DATE,
+PRIMARY KEY( site_increment )
+);
+
+
+create table user_entry_current (
+user_counter  INT UNSIGNED NOT NULL,
+user_id_name VARCHAR( 22 ) BINARY NOT NULL,
+profile_number INT UNSIGNED NOT NULL,
+password VARCHAR( 12 ) BINARY  NOT NULL,
+hint_string VARCHAR( 25 ),
+email_address VARCHAR( 50 ),
+date_joined DATE,
+PRIMARY KEY( user_counter, user_id_name )
+);
+
+create table user_entry_archive (
+user_counter  INT UNSIGNED NOT NULL,
+user_profile_number INT UNSIGNED NOT NULL,
+operating_system VARCHAR( 25 ),
+kernel_version FLOAT,
+browser VARCHAR( 15 ),
+browser_version FLOAT,
+PRIMARY KEY( user_counter, user_profile_number )
+);
+
+
+create table new_user_counter (
+new_user_count INT UNSIGNED NOT NULL AUTO_INCREMENT,
+PRIMARY KEY ( new_user_count )
+);

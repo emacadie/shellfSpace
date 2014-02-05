@@ -7,8 +7,8 @@ mysql-admin
  To use SET PASSWORD on Unix, do this:
 
 shell> mysql -u root
-mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('dellsux');
-mysql> SET PASSWORD FOR 'root'@'saigon' = PASSWORD('dellsux');
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('xxx');
+mysql> SET PASSWORD FOR 'root'@'saigon' = PASSWORD('xxx');
 mysql> FLUSH PRIVILEGES;
 
 create database shellf;
